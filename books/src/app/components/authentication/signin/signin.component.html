@@ -1,1 +1,115 @@
-<p>Espace d'authentification signin !</p>
+<!--Login Page Starts-->
+<section id="login">
+    <div class="container-fluid">
+  
+  <div class="row row-header">
+  <div class="col"></div>
+  <div class="col-10"> 
+     
+   </div>
+  <div class="col"></div>
+  </div>
+      <div class="row full-height-vh m-0">
+        
+        <div class="col-12 d-flex align-items-center justify-content-center">
+            
+          <div class="card card-radus">
+            
+  
+            <div class="card-content">
+              <div class="card-body login-img">
+                <div class="row m-0">
+                  <div
+                    class="col-lg-6 d-lg-block d-lg-block-rached text-center align-middle"
+                  >
+                    <img
+                      src="../../../assets/images/authentification.png"
+                      alt=""
+                      class="img-fluid mt-5 img-rached"
+                      width="420"
+                      height="auto"
+                    />
+                  </div>
+                  
+                  <div class="col-lg-6 col-md-12 bg-white px-4 pt-3">
+                    <h1 class="card-title mb-2 text-left">Authentification</h1>
+                    <p class="card-text mb-3 text-left">
+                     Veuillez s'authentifiez
+                    </p>
+  
+                   
+                    <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+                  
+                
+
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <button class="btn btn-raised btn-info" type="button"><i class="las la-envelope"></i></button>
+                    </div>
+                    <input type="email" id="email" formControlName="email" class="form-control text-left">
+                    <div *ngIf="submitted || ( f.email.touched && f.email.invalid )" class="col-12">
+                      <div class="error" *ngIf="f.email.hasError('required')">Il faut entrer un email ! </div>
+                      </div>
+                  </div>
+  
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <button class="btn btn-raised btn-info" type="button"><i class="las la-lock"></i></button>
+                      </div>
+                      <input type="password" id="password" formControlName="password" class="form-control text-left">
+                      <div *ngIf="submitted || ( f.password.touched && f.password.invalid )" class="col-12">
+                        <div class="error" *ngIf="f.password.hasError('required')">Il faut entrer un mot de passe ! </div>
+                        </div> 
+                        <div *ngIf="submitted || ( f.password.touched && f.password.invalid )" class="col-12">
+                          <div class="error" *ngIf="f.password.hasError('pattern')">doit contenir au moin 6 caractère  ! </div>
+                          </div> 
+                    </div>
+                    
+                 
+                    <div class="fg-actions justify-content-between">
+                      
+                      
+                        <button type="submit" class="btn btn-primary btn-lg btn-block" [disabled]="signInForm.invalid" >
+                          <span class="fa fa-long-arrow-left"></span><a
+                            
+                            class="text-decoration-none text-white"
+                            >Connexion</a
+                          >
+                        </button>
+
+                        <div class="col-12">
+                            <div class="login-or">
+                                <hr class="hr-or">
+                                <span class="span-or">ou</span>
+                            </div>
+
+                        </div>
+
+                        <button type="button" (click)="signInWithGoogle()" class="btn btn-danger btn-lg btn-block" >
+                            <span class="fa fa-long-arrow-left"></span>
+                            <a class="text-decoration-none text-white">Se connecter avec Gmail</a>
+                          </button>
+                      
+                    </div>
+                    </form>
+                    <hr class="m-0" />
+                    <div class="d-flex justify-content-between mt-3">
+                      <div class="option-login">
+                        <h6 class="text-decoration-none text-primary">
+                         
+                        </h6>
+                      </div>
+                      
+                    </div>
+                  </div>
+                
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--Login Page Ends-->
+  
