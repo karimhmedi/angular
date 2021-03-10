@@ -20,7 +20,7 @@ import { UserProfileModule } from './components/user-profile/user-profile.module
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireModule.initializeApp(environment.firebaseConfig, "angular-auth-firebase"),
     AngularFirestoreModule,
     ReactiveFormsModule,
     AngularFireAuthModule,

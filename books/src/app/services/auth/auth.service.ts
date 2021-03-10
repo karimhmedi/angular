@@ -2,9 +2,11 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreDocument} from '@angular/fire/firestore'
 import { User } from './../../models/user.model';
-import auth from 'firebase/firebase-auth'
+import firebase from "firebase/app";
+import "firebase/auth";
+import "firebase/firestore";
 import { Router, ActivatedRoute } from "@angular/router";
-import * as firebase from 'firebase';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -44,7 +46,7 @@ this.setUserData(result.user, signUpForm.username);
   }
 
 
-  setUserData(user, userName)
+  setUserData(user, userName?)
   {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc('user/${user.uid}');
     const userData: User = {
@@ -104,15 +106,15 @@ this.router.navigate(['/user-profile']);
 
   signInWithGoogle()
   {
-/*
+
    return this.afAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
     .then((result)=>{
-      //this.setUserData(result.user);
+      this.setUserData(result.user);
 this.router.navigate(['/user-profile']);
     }).catch((error)=> {
       window.alert(error.message);
     
-    });*/
+    });
 
   }
 
