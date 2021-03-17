@@ -22,6 +22,7 @@ this.afAuth.authState.subscribe(user=>{
 if(user)
  {
    localStorage.setItem('user',JSON.stringify(user));
+   
  }
  else{
   localStorage.setItem('user',null);
@@ -30,6 +31,12 @@ if(user)
 });
 
     }
+
+
+    ngOnInit(): void {
+    
+  alert(this.isLoggedIn);
+}
 
   createNewUser(signUpForm)
   {

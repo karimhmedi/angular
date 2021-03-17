@@ -1,0 +1,67 @@
+<div class="row col-12 content-center mt-4" >
+    <div class="col-8">
+<form  [formGroup]="filmForm" (ngSubmit)="onSaveFilm()">
+      <div class="card">
+        <div class="card-header bg-primary text-white pb-2">
+
+            <h4>  
+              Ajouter un nouveau filme
+            </h4>
+          </div>    
+         <div class="card-body">
+          <div class="col-12">
+           
+
+            <div class="form-row">
+              <div class="col-6 mb-3">
+                  <label for="title">Title</label>
+                  <input type="text" class="form-control" id="title"
+                      placeholder="nom de film" formControlName="title">
+                      <div *ngIf="f.title.touched && f.title.invalid">
+                        <div class="error" *ngIf="f.title.hasError('required')">le title est obligatoire ! </div>
+                        </div>
+
+              </div>
+              <div class="col-6 mb-3">
+                  <label for="director">Director</label>
+                  <input type="text" class="form-control" id="director"
+                      placeholder="Directed by" formControlName="director">
+                      <div *ngIf="f.director.touched && f.director.invalid">
+                        <div class="error" *ngIf="f.director.hasError('required')">le Director de film est obligatoire ! </div>
+                        </div>
+
+              </div>
+            </div>
+            <div class="form-row">
+
+              <div class="col-12 mb-3">
+                <div class="form-group mb-0">
+                    <label for="synopsis">Synopsis</label>
+                    <textarea class="form-control input-air-primary" id="synopsis"
+                        formControlName="synopsis" rows="3">
+                </textarea>
+                <div *ngIf="f.synopsis.touched && f.synopsis.invalid">
+                    <div class="error" *ngIf="f.synopsis.hasError('required')">la description est obligatoire ! </div>
+                    </div>
+                </div>
+            </div>
+            </div>   
+        </div>
+        </div>        
+        </div>
+
+        <div class="card-footer">
+
+          <div class="form-actions text-center col-md-12">
+            <button type="submit"  class="btn btn-raised btn-success" [disabled]="filmForm.invalid" style="margin-left: 10px;" >
+              <i class="fa fa-check"></i> ENREGISTRER
+            </button>
+           
+            
+          </div>
+        </div>
+</form>
+        </div>
+</div>        
+
+

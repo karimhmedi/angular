@@ -24,6 +24,10 @@ const routes: Routes = [
     path: 'user-profile', canActivate:[AuthGuard],
     loadChildren: () => import('./components/user-profile/user-profile.module').then(mod => mod.UserProfileModule)
   },
+  {
+    path: 'film', canActivate:[AuthGuard],
+    loadChildren: () => import('./components/film/film.module').then(mod => mod.FilmModule)
+  },
 ];
 
 @NgModule({

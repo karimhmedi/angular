@@ -1,0 +1,16 @@
+.content-center {
+    justify-content: center;
+  }
+
+  .error {
+    color: red;
+    
+}
+
+input.ng-invalid.ng-touched , input.ng-invalid.ng-dirty{ 
+    border-bottom: 3px solid red !important;
+}
+
+textarea.ng-invalid.ng-touched , input.ng-invalid.ng-dirty{ 
+    border-bottom: 3px solid red !important;
+}
