@@ -11,4 +11,7 @@ import { FilmListRoutingModule } from './film-list-routing.module';
     FilmListRoutingModule
   ]
 })
-export class FilmListModule { }
+export class FilmListModule {
+
+
+ }

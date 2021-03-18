@@ -1,0 +1,110 @@
+.text-large
+{
+    font-size: large;
+}
+
+.table{
+   
+    padding: 5px;
+    margin: 1% 0;
+    box-shadow: 3px 3px 2px #ccc;
+    transition: 0.5s;
+    }
+  .table:hover{
+    box-shadow: 3px 3px 0px transparent;
+    transition: 0.5s;
+    }
+    .table tr
+    {
+        border: 2px solid #dee2e6;   
+    }
+  
+    .table tr td
+    {
+      border: 1px solid #dee2e6;
+    }
+    .table thead th
+    {
+        border-left: 1px solid #dee2e6;
+        vertical-align: middle;
+    }
+  
+  
+    .second
+    {
+      font-weight: 300; 
+      background-color: #f8f9fb;
+    }
+  
+    .head
+    {
+     
+        font-weight: 600;
+     
+        background-color: #008B8E;
+    color: white;
+    }
+  
+    .bordered
+    {
+     border-left: solid 2px #009da073 !important
+    }
+    .head1
+    {
+     
+        font-weight: 600;
+   
+        background-color: #009DA0;
+        color: white;
+    }
+  
+    .head2
+    {
+      
+        font-weight: 600;
+      
+        background-color: #80CED0;
+    color: white;
+    }
+  
+    .head3
+    {
+      
+        font-weight: 600;
+     
+        background-color: #B3E2E3;
+    color: white;
+    }
+  
+    .total
+    {
+        font-weight: 600;
+        color:red;
+    }
+  
+    .libtotal
+    {
+        font-weight: 400;
+        
+    }
+  
+    .controlelib
+    {
+      font-size: 18px;
+    }
+  
+    tfoot{
+        background-color: #f8f9fb;
+    }
+  
+    tfoot tr th{
+      border-left: 1px solid #dee2e6;
+      display: block;
+      background-color: #f8f9fb;
+    }
+  
+    tbody tr td
+    {
+      vertical-align: middle;
+      font-family: "Droid Arabic Kufi", "serif", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+    }
