@@ -25,4 +25,9 @@ export class FilmListComponent implements OnInit {
     ).subscribe();
   }
 
+  deleteFilm(filmId)
+  {
+this.filmservice.deleteFilm(filmId);
+  }
+
 }

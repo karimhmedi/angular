@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 //import { BrowserModule } from '@angular/platform-browser';
-import { CommonModule } from '@angular/common';
+//import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilmFormRoutingModule } from './film-form-routing.module';
 
@@ -9,7 +9,7 @@ import { FilmFormRoutingModule } from './film-form-routing.module';
   declarations: [],
   imports: [
     //BrowserModule,
-    CommonModule,
+    //CommonModule,
     FilmFormRoutingModule,
     FormsModule,
     ReactiveFormsModule

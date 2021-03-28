@@ -17,23 +17,36 @@ export class FilmFormComponent implements OnInit {
   action: FormAction;
   filmForm : FormGroup;
   destroy$= new Subject();
+  percentage=null;
+  currentFileUpload=null;
+  filmId : string;
   constructor(
     private fb : FormBuilder,
     private route: ActivatedRoute,
     private filmservice: FilmService
     ) { }
-
   ngOnInit(): void {
-
-
     this.route.paramMap.pipe(
       filter( p=>!p.has('filmId')),
       tap(p=>{
-        this.action=p.get('action') as FormAction
+        this.action=p.get('action') as FormAction;
         this.initForm();
       }),
       takeUntil(this.destroy$),
     ).subscribe();
+
+    this.route.paramMap.pipe(
+      filter( p=>p.has('filmId')),
+      tap(p=>{
+        console.log("pppppppp",p);
+        this.action=p.get('action') as FormAction;      
+        this.filmId=p.get('filmId');
+        this.getFilmById(this.filmId);     
+      }),
+      takeUntil(this.destroy$),
+    ).subscribe();
+    
+
   }
 
   initForm()
@@ -50,7 +63,50 @@ export class FilmFormComponent implements OnInit {
 
   onSaveFilm()
   {
-this.filmservice.addfilm(this.filmForm.value);
+    let FilmForm= this.filmForm.value;
+
+FilmForm.image =this.currentFileUpload;
+switch(this.action)
+{
+  case 'add':
+  this.filmservice.addfilm(this.filmForm.value);
+  break;
+  case 'edit':
+  FilmForm.id = this.filmId;
+  this.filmservice.updateFilm(FilmForm);
+  break;
+}
+
+  }
+
+  detectFiles(event)
+  {
+this.filmservice.pushFileToStorage(event.target.files[0]).subscribe(
+  percentage=>{
+  console.log('percentage',percentage);
+  this.percentage=percentage;
+  if(this.percentage===100)
+  {
+this.filmservice.downloadURL.pipe(takeUntil(this.destroy$)).subscribe(
+  currentFileUpload => { 
+    this.currentFileUpload=currentFileUpload;
+  }
+);
+  }
+}
+);
+  }
+
+  getFilmById(filmId)
+  {
+this.filmservice.getFilmById(filmId).subscribe(film =>{
+  this.filmForm=this.fb.group({
+title:[film.title,Validators.required],
+director:[film.director, Validators.required],
+synopsis:film.synopsis
+  });
+  this.currentFileUpload=film.image;
+});
   }
 
   ngOnDestroy()

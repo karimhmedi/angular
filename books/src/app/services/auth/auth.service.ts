@@ -13,9 +13,7 @@ import { Router, ActivatedRoute } from "@angular/router";
 export class AuthService {
 
   constructor(private afAuth: AngularFireAuth, private afs: AngularFirestore, 
-     private route: ActivatedRoute,
-    
-     private angularFireAuth: AngularFireAuth,
+   
     private router: Router, ) { 
 
 this.afAuth.authState.subscribe(user=>{

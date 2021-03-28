@@ -1,4 +1,4 @@
-//import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { AngularFireModule} from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule} from '@angular/fire/firestore';
+import { AngularFireStorageModule} from '@angular/fire/storage';
 import { environment } from 'src/environments/environment';
 import { SigninComponent } from './components/authentication/signin/signin.component';
 import { SignupComponent } from './components/authentication/signup/signup.component';
@@ -23,13 +24,14 @@ import { FilmModule } from './components/film/film.module';
     HeaderComponent
   ],
   imports: [
-    //BrowserModule,
+    BrowserModule,
     BrowserAnimationsModule,
     CommonModule,
     AppRoutingModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig, "angular-auth-firebase"),
     AngularFirestoreModule,
+    AngularFireStorageModule,
     FormsModule,
     AngularFireAuthModule,
     UserProfileModule,
@@ -39,3 +41,4 @@ import { FilmModule } from './components/film/film.module';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

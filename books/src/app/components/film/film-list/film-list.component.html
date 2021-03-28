@@ -1,5 +1,5 @@
 <div class="form-actions text-center col-md-12 mt-4">
-    <button type="submit"  class="btn btn-raised btn-danger" style="margin-left: 10px;" [routerLink]="['/film/film-form/add']">
+    <button type="submit"  class="btn btn-raised btn-success" style="margin-left: 10px;" [routerLink]="['/film/film-form/add']">
       <i class="fa fa-plus"></i> Créer un nouveau film
     </button>
     <div class="card mt-4">
@@ -16,17 +16,19 @@
           <thead>
 
             <tr>
-              <th class="bg-primary text-white text-large" style="width: 15%;">
+              <th class="bg-primary text-white text-large" style="width: 20%;">
                 <h6>Title</h6>
               </th>
 
-              <th class="bg-primary text-white text-large" style="width: 20%;">
+              <th class="bg-primary text-white text-large" style="width: 10%;">
                 <h6>Realisateur</h6>
               </th>
-              <th class="bg-primary text-white text-large" style="width: 65%;">
+              <th class="bg-primary text-white text-large" style="width: 45%;">
                 <h6>Synopsis</h6>
               </th>
-              
+              <th class="bg-primary text-white text-large" style="width: 25%;">
+                <h6>Actions</h6>
+              </th>
             </tr>
 
           </thead>
@@ -36,6 +38,16 @@
               <td>{{b.title}}</td> 
               <td>{{b.director}}</td>
               <td>{{b.synopsis}}</td>
+              <td>
+                
+                <button type="button" [routerLink]="['/film/film-form/edit',b.id]"  class="btn btn-raised btn-info">
+                <i class="fa fa-edit"></i> Modifier
+              </button>
+              <button type="button"   (click)="deleteFilm(b.id)" class="btn btn-raised btn-danger ml-2 mr-2">
+                <i class="fa fa-trash"></i> Supprimer
+              </button>
+            
+            </td>
             </tr>
     
           </tbody>
