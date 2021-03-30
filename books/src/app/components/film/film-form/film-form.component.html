@@ -3,10 +3,14 @@
 <form [formGroup]="filmForm" (ngSubmit)="onSaveFilm()">
       <div class="card">
         <div class="card-header bg-primary text-white pb-2">
-<ng-container [ngSwitch]="action">
+<!--<ng-container [ngSwitch]="action">
   <h4 *ngSwitchCase="'add'">Ajouter un nouveau film</h4>
   <h4 *ngSwitchCase="'edit'">Modifier un film</h4>
-</ng-container>
+</ng-container>-->
+
+<ng-container *ngTemplateOutlet="titleTemplate; context: { title: action === 'add' ? 'Enregistrer un nouveau livre' : 'Modifier un livre'}">
+
+</ng-container> 
 
           </div>    
          <div class="card-body">
@@ -87,6 +91,11 @@
           </div>
         </div>
 </form>
+
+<ng-template #titleTemplate let-title="title">
+ <h3>{{ title }}</h3>
+</ng-template>
+
         </div>
 </div>        
 

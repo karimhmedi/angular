@@ -12,7 +12,7 @@
       <div class="card-body">
 
         
-        <table class="table table-responsive-md text-center table-hover">
+        <table class="table table-responsive-md text-center table-hover" *ngIf="!isLoading; else waitTemplate">
           <thead>
 
             <tr>
@@ -53,6 +53,12 @@
           </tbody>
         </table>
 
+        <ng-template #waitTemplate>
+          <span style="padding-right: 1em;"><b>Chargement en cours</b></span>
+          <div class="sppiner-border" role="status">
+            <span class="sr-only">loading...</span>
+          </div>
+        </ng-template>
         </div>
         </div>
     

@@ -11,6 +11,7 @@ import { FilmService } from 'src/app/services/film/film.service';
 export class FilmListComponent implements OnInit {
 
   films:Film[];
+  isLoading=true;
   constructor(private filmservice:FilmService)
   {
 
@@ -21,6 +22,7 @@ export class FilmListComponent implements OnInit {
       {
         this.films=films;
         console.log('filmss',films);
+        this.isLoading=false;
       })
     ).subscribe();
   }

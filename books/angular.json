@@ -9,6 +9,19 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n":{
+        "sourceLocale":"en-US",
+        "locales":{
+          "fr":{
+            "translation":"src/locales/messages.fr.xlf",
+            "baseHref":""},
+            "en":{
+              "translation":"src/locales/messages.en.xlf",
+              "baseHref":""
+              }
+              }
+            },
+
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -57,7 +70,17 @@
                   "maximumError": "10kb"
                 }
               ]
-            }
+            },
+            "fr":{
+              "localize":["fr"],
+              "outputPath":"dist/under-construction-fr/",
+              "i18nMissingTranslation":"error"},
+              "en":{
+                "localize":["en"],
+                "outputPath":"dist/under-construction-en/",
+                "i18nMissingTranslation":"error"
+              }
+
           }
         },
         "serve": {
@@ -68,7 +91,14 @@
           "configurations": {
             "production": {
               "browserTarget": "books:build:production"
-            }
+            },
+            "fr":{
+              "browserTarget":"books-app:build:fr"
+              },
+              "en":{
+                "browserTarget":"books-app:build:en"
+              }
+
           }
         },
         "extract-i18n": {

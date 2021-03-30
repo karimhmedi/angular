@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="6fd56962e8bc81b337a9d17119df0b97c47740b6" datatype="html">
+        <source>Authentification</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/authentication/signin/signin.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <note priority="1" from="description"> titre pour le composant authentification</note>
+        <note priority="1" from="meaning">form title </note>
+      </trans-unit>
+      <trans-unit id="6aae380c5892f2874a388bf5e659a5b155fe89e8" datatype="html">
+        <source> Veuillez s&apos;authentifiez </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/authentication/signin/signin.component.html</context>
+          <context context-type="linenumber">37,38</context>
+        </context-group>
+        <note priority="1" from="description"> message pour authentification</note>
+        <note priority="1" from="meaning">message title </note>
+      </trans-unit>
+      <trans-unit id="55a57e6165759f4c48fd86a29d674304066044e9" datatype="html">
+        <source>Connexion</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/authentication/signin/signin.component.html</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="57bbc606c8a137f8baba4a998be26251521bb9e4" datatype="html">
+        <source>ou</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/authentication/signin/signin.component.html</context>
+          <context context-type="linenumber">80</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7bfbc90fa6e32b454913c83c2d593bd9fcf729fd" datatype="html">
+        <source>Se connecter avec Gmail</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/authentication/signin/signin.component.html</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e03bb73deeccc97b5aaaa6d8b908ea6a61ea258e" datatype="html">
+        <source>Il faut entrer un email ! </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/authentication/signin/signin.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3a7c2576a0b7af2e07598ba02c04702ddec53daf" datatype="html">
+        <source>Il faut entrer un mot de passe ! </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/authentication/signin/signin.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a95fd199e326c2d7433ca71c70350c4ca27f3ea1" datatype="html">
+        <source>doit contenir au moin 6 caractère ! </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/authentication/signin/signin.component.html</context>
+          <context context-type="linenumber">64</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
