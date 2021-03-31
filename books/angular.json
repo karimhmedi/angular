@@ -9,19 +9,19 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
-      "i18n":{
-        "sourceLocale":"en-US",
-        "locales":{
-          "fr":{
-            "translation":"src/locales/messages.fr.xlf",
-            "baseHref":""},
-            "en":{
-              "translation":"src/locales/messages.en.xlf",
-              "baseHref":""
-              }
-              }
-            },
-
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "fr": {
+            "translation": "src/locales/messages.fr.xlf",
+            "baseHref": ""
+          },
+          "en": {
+            "translation": "src/locales/messages.en.xlf",
+            "baseHref": ""
+          }
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -37,8 +37,8 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.css"
+              "src/styles.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.css"
             ],
             "scripts": []
           },
@@ -53,7 +53,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -71,16 +70,20 @@
                 }
               ]
             },
-            "fr":{
-              "localize":["fr"],
-              "outputPath":"dist/under-construction-fr/",
-              "i18nMissingTranslation":"error"},
-              "en":{
-                "localize":["en"],
-                "outputPath":"dist/under-construction-en/",
-                "i18nMissingTranslation":"error"
-              }
-
+            "fr": {
+              "localize": [
+                "fr"
+              ],
+              "outputPath": "dist/under-construction-fr/",
+              "i18nMissingTranslation": "error"
+            },
+            "en": {
+              "localize": [
+                "en"
+              ],
+              "outputPath": "dist/under-construction-en/",
+              "i18nMissingTranslation": "error"
+            }
           }
         },
         "serve": {
@@ -92,13 +95,12 @@
             "production": {
               "browserTarget": "books:build:production"
             },
-            "fr":{
-              "browserTarget":"books-app:build:fr"
-              },
-              "en":{
-                "browserTarget":"books-app:build:en"
-              }
-
+            "fr": {
+              "browserTarget": "books:build:fr"
+            },
+            "en": {
+              "browserTarget": "books:build:en"
+            }
           }
         },
         "extract-i18n": {
@@ -154,6 +156,6 @@
   },
   "defaultProject": "books",
   "cli": {
-    "analytics": false
+    "analytics": "6388de99-c699-4d9c-bea4-f50ddd2e2514"
   }
 }
