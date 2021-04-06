@@ -16,6 +16,7 @@ import { SignupComponent } from './components/authentication/signup/signup.compo
 import { UserProfileModule } from './components/user-profile/user-profile.module';
 import { HeaderComponent } from './components/header/header.component';
 import { FilmModule } from './components/film/film.module';
+import { ServiceWorkerModule } from '@angular/service-worker';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,13 @@ import { FilmModule } from './components/film/film.module';
     FormsModule,
     AngularFireAuthModule,
     UserProfileModule,
-    FilmModule
+    FilmModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
